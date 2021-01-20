@@ -8,7 +8,8 @@ const { MongoClient } = mongodb;
 //MONGODB
 //const CONNECTION_URL = 'url string';  (see in .env)
 //const CONNECTION_URL = process.env.CONNECTION_URL;
-const CONNECTION_URL = 'mongodb+srv://anna123:anna1234@capstone1.bl893.mongodb.net/capstone?retryWrites=true&w=majority';
+const CONNECTION_URL =
+  'mongodb+srv://anna123:anna1234@capstone1.bl893.mongodb.net/capstone?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
 MongoClient.connect(CONNECTION_URL, function (err, client) {
@@ -32,5 +33,23 @@ MongoClient.connect(CONNECTION_URL, function (err, client) {
     post.createdAt = new Date();
     await postsCollection.insertOne(post);
     res.json(post);
+  });
+
+  const usersCollection = db.collection('users');
+  app.post('/user/signup', async function (req, res) {
+    const { firstName, lastName, email, password } = req.body;
+    const user = { firstName, lastName, email, password };
+    await usersCollection.insertOne(user);
+    res.json(user);
+  });
+
+  app.post('/user/signin', async function (req, res) {
+    const { email, password } = req.body;
+    const user = await usersCollection.findOne({ email });
+    if (user.password === password) {
+      res.json(user);
+    } else {
+      res.sendStatus(403);
+    }
   });
 });
