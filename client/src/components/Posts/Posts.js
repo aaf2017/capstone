@@ -10,12 +10,14 @@ import {
   ListItem,
   ListItemText,
 } from '@material-ui/core';
-//import { DataGrid } from '@material-ui/data-grid';
 import { useSelector } from 'react-redux';
 import Post from './Post/Post';
+// import Comment from '../Comments/Comment/Comment';
+// import Comments from '../Comments/Comments';
+
 import useStyles from './styles';
 
-const Posts = (/*{ setCurrentId }*/) => {
+const Posts = () => {
   const posts = useSelector(state => state.posts);
   const classes = useStyles();
   const [category, setCategory] = useState('');

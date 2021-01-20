@@ -17,15 +17,13 @@ import Box from '@material-ui/core/Box';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
-import AddCommentOutlinedIcon from '@material-ui/icons/AddCommentOutlined';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { likePost, deletePost } from '../../../actions/posts';
 import useStyles from './styles';
 
-const Post = ({ post }) => {
+const Comment = ({ post /*, setCurrentId*/ }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
-  console.log(post);
   const createdAt = new Date(post.createdAt);
   return (
     <React.Fragment>
@@ -40,16 +38,13 @@ const Post = ({ post }) => {
         </Grid>
 
         <Grid style={{ width: '100%' }} className={classes.questionGrid}>
-          <Typography className={classes.question} variant='body1' gutterBottom>
-            {post.question}
-          </Typography>
           <Typography
             className={classes.question}
             variant='body2'
             color='textSecondary'
             gutterBottom
           >
-            {post.category}
+            {post.question}
           </Typography>
         </Grid>
 
@@ -58,7 +53,7 @@ const Post = ({ post }) => {
             className={classes.actions}
             style={{ color: '#e40475' }}
             size='small'
-            onClick={() => {}}
+            onClick={() => {}} /*or: onClick={() => setCurrentId(post._id)} */
           >
             <MoreHorizIcon fontSize='default' />
           </Button>
@@ -103,4 +98,4 @@ const Post = ({ post }) => {
   );
 };
 
-export default Post;
+export default Comment;

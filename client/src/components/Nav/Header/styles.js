@@ -2,19 +2,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { cyan } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
-  /*toolbarMargin: {
-    ...theme.mixins.toolbar,
-    marginBottom: "3em",
-    [theme.breakpoints.down("md")]: {
-        marginBottom: "2em"
-      },
-      [theme.breakpoints.down("xs")]: {
-        marginBottom: "1.25em"
-      }
-},*/
   appBar: {
     marginTop: 0,
-    //marginBottom: "70px",
     backgroundColor: '#0e0220',
     display: 'flex',
     flexDirection: 'row',
@@ -42,12 +31,12 @@ export default makeStyles((theme) => ({
         backgroundColor: "transparent"
     }
   },
-  toolbar: { //*** */
+  toolbar: { 
     display: 'flex',
     justifyContent: 'flex-end',
     width: '150px',
   },
-  tabContainer: {//*** */
+  tabContainer: {
     marginRight: 0,
   },
   boxTwoBrand: {
@@ -62,26 +51,26 @@ export default makeStyles((theme) => ({
     minWidth: 15,
     marginRight: 0,
     color: "#48e0e4",
-    textShadow: "8px 4px 7px rgba(228,4,117,0.94)",
-    //fontFamily: "Quintessential, cursive",
+    //textShadow: "8px 4px 7px rgba(228,4,117,0.94)",
     fontWeight: 600,
     fontSize: 18,
     padding: 0,
     "&:hover": {
         backgroundColor: "transparent",
-        color: "rgba(190,179,139,0.94)",
-        textShadow: "8px 4px 7px rgba(228,4,117,0.94)",
+        color: "#e40475",
+        //color: "rgba(190,179,139,0.94)",
+        //textShadow: "8px 4px 7px rgba(228,4,117,0.94)",
     }
   },
-  /*profile: {
+  profile: { ///////////////
     display: 'flex',
     justifyContent: 'flex-end',
     width: '400px',
-  },*/
+  },
   subHeader: {
     color: "#BEB38B",
-    fontWeight: "400",
-    marginRight: "60px",
+    fontWeight: 400,
+    marginRight: "9em",
     marginLeft: "auto"
   },
   cyan: {
@@ -96,6 +85,6 @@ export default makeStyles((theme) => ({
     mainContainer: {
       flexDirection: "column-reverse",
     },
-  }
+  },
  
 }));

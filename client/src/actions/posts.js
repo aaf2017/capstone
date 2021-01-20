@@ -1,4 +1,5 @@
 import * as api from '../api/index.js';
+import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes';
 
 //Action Creators (actions that create actions)
 export const getPosts = () => async (dispatch) => { //function returns function
@@ -11,7 +12,7 @@ export const getPosts = () => async (dispatch) => { //function returns function
         console.log(error);
     }
     //dispatch(action); //redux-thunk - as opposed to regular return action
-}
+};
 
 export const createPost = (post) => async (dispatch) => {
     try {
@@ -19,12 +20,12 @@ export const createPost = (post) => async (dispatch) => {
 
         dispatch({ type: 'CREATE', payload: data });
     } catch (error) {
-        console.log(error);
+        console.log(error.message);
 
     }
-}
+};
 
-/*export const updatePost = (id, post) => async (dispatch) => {
+export const updatePost = (id, post) => async (dispatch) => {
     try {
         const { data } = await api.updatePost(id, post);
         dispatch({ type: 'UPDATE', payload: data });
@@ -32,7 +33,7 @@ export const createPost = (post) => async (dispatch) => {
         console.log(error.message);
     }
     
-}
+};
 
 export const deletePost = (id) => async (dispatch) => {
     try {
@@ -42,7 +43,7 @@ export const deletePost = (id) => async (dispatch) => {
     } catch (error) {
         console.log(error);
     }
-}
+};
 
 export const likePost = (id) => async (dispatch) => {
     try {
@@ -52,5 +53,4 @@ export const likePost = (id) => async (dispatch) => {
     } catch (error) {
         console.log(error);
     }
-}
-*/
+};
