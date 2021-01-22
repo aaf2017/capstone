@@ -15,3 +15,5 @@ export const signIn = formData =>
 export const signUp = formData =>
   axios.post(`${baseUrl}/user/signup`, formData);
  
+export const loggedIn = () => axios.get(`${baseUrl}/user`);
+export const logOut = () => axios.post(`${baseUrl}/logout`);
