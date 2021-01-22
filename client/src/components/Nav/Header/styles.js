@@ -19,10 +19,18 @@ export default makeStyles((theme) => ({
     letterSpacing: "0.1rem",
     fontSize: "30px",
     textDecoration: "none",
+    "&:hover": {
+      transform: "scale(1.2)",
+      transitionDuration: "1s",
+    },
   },
   logo: {
     height: "5em",
     width: "5em",
+    "&:hover": {
+      transform: "scale(1.2)",
+      transitionDuration: "1s",
+    }, 
   },
   logoContainer: {
     padding: 0,

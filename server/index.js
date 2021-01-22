@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongodb from 'mongodb';
-const { MongoClient } = mongodb;
+const { MongoClient, ObjectId } = mongodb;
 //import dotenv from 'dotenv';
 
 //MONGODB
@@ -33,6 +33,20 @@ MongoClient.connect(CONNECTION_URL, function (err, client) {
     post.createdAt = new Date();
     await postsCollection.insertOne(post);
     res.json(post);
+  });
+
+  app.patch('/posts/:id', async function (req, res) {
+    const id = new ObjectId(req.params.id);
+    const { user_fname, category, question, comments } = req.body;
+    const update = { user_fname, category, question, comments };
+    await postsCollection.findOneAndUpdate({ _id: id }, { $set: update });
+    res.json(req.body);
+  });
+
+  app.delete('/posts/:id', async function (req, res) {
+    const id = new ObjectId(req.params.id);
+    await postsCollection.findOneAndDelete({ _id: id });
+    res.send(200);
   });
 
   const usersCollection = db.collection('users');

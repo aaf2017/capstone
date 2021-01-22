@@ -43,6 +43,7 @@ const Posts = () => {
           <List className={classes.list}>
             {['', '', '', 'ALL CATEGORIES'].map((text, index) => (
               <ListItem
+                disableRipple
                 button
                 key={text}
                 onClick={() => onCategorySelected('')}
@@ -61,6 +62,8 @@ const Posts = () => {
               'Audition Etiquette',
             ].map((text, index) => (
               <ListItem
+                disableRipple
+                className={classes.categories}
                 button
                 key={text}
                 onClick={() => onCategorySelected(text)}

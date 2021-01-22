@@ -31,8 +31,9 @@ const Header = () => {
     <AppBar className={classes.appBar} position='fixed'>
       <Box className={classes.boxTwoBrand}>
         <Button
-          //component={Link}
-          //to="/"
+          container
+          component={Link}
+          to="/"
           disableRipple
           //onClick={() => setValue(0)}
           className={classes.logoContainer}
@@ -82,6 +83,7 @@ const Header = () => {
             </div>
           ) : (
             <Button
+              disableRipple
               component={Link}
               to='/auth'
               color='#48e0e4'
@@ -97,55 +99,3 @@ const Header = () => {
 };
 
 export default Header;
-
-/*import React, { useState, useEffect } from 'react';
-import { Container, AppBar, Button, Typography, Grow, Grid, Toolbar, Box, Tabs, Tab, Menu, MenuItem, useMediaQuery, List, ListItem, ListItemText } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
-import {useTheme} from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import logo from './images/logo.svg';
-import { useDispatch } from 'react-redux';
-import { getPosts } from './actions/posts';
-import Posts from './components/Posts/Posts';
-import FormQ from './components/Forms/FormQ';
-import useStyles from './styles';
-
-export default function Header(props) {
-    const classes = useStyles();
-
-    return (
-        <React.Fragment>
-            <AppBar className={classes.appBar} position="fixed">
-                    <Toolbar disableGutter>
-
-                    <Box className="classes.boxOne">
-                        <Typography className={classes.subHeader} variant="h6">
-                            ...professional forum for classical singers...
-                        </Typography>
-                    </Box>
-                    
-                    <Box className={classes.boxTwo}>
-                        <Button
-                            //component={Link} 
-                            //to="/" 
-                            disableRipple 
-                            //onClick={() => setValue(0)} 
-                            className={classes.logoContainer}
-                        >
-                            <img className={classes.logo} src={logo} alt="Treble Clef Logo" height="60" />
-                        </Button>
-                            
-                        <Typography className={classes.appName} variant="h4">il PASSAGGIO</Typography>
-                    </Box>
-                    
-                        
-                    </Toolbar>          
-                </AppBar>
-            
-                <div className={classes.toolbarMargin} />
-        </React.Fragment>
-    );
-}
-*/

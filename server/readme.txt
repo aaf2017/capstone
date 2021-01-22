@@ -6,7 +6,7 @@ npm install dotenv //+create .env file for storing env. variables (security)
 npm start //localhost:5000/posts
 
 //stop server
-npm install bcryptjs jsonwebtoken
+npm install bcryptjs jsonwebtoken is-empty passport passport-jwt validator
 
 
 

@@ -16,7 +16,7 @@ import {
 } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import Post from '../Posts//Post/Post';
-import Comment from './Comment/Comment';
+//import Comment from './Comment/Comment';
 //import Comments from './Comments/Comments';
 
 import useStyles from './styles';

@@ -15,13 +15,15 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
 import useStyles from './styles';
-import { createPost /*, updatePost */ } from '../../actions/posts';
+import { createPost, updatePost } from '../../actions/posts';
 
 const FormQ = () => {
   const [postData, setPostData] = useState({
     user_fname: '',
     category: '',
     question: '',
+    comments: [],
+    likes: 0
   });
 
   const classes = useStyles();
@@ -34,7 +36,7 @@ const FormQ = () => {
   };
 
   const clear = () => {
-    setPostData({ user_fname: '', category: '', question: '' });
+    setPostData({ user_fname: '', category: '', question: '', comments: [], likes: 0 });
   };
 
   return (
