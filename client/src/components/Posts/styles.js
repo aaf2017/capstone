@@ -57,7 +57,6 @@ export default makeStyles((theme) => ({
     fontWeight: "600",
     display: "flex",
     flexShrink: 0,
-    //flexDirection: "flex-end",
     marginLeft: "1em",
     marginBottom: "1em",
     marginTop: "2em",

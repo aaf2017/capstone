@@ -1,25 +1,10 @@
 import React from 'react';
-import {
-  Grid,
-  Button,
-  ButtonGroup,
-  Typography,
-  Card,
-  CardHeader,
-  CardContent,
-  CardActions,
-  Collapse,
-  IconButton,
-} from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
-import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
-import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
-import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import { likePost, deletePost } from '../../../actions/posts';
+import Typography from '@material-ui/core/Typography';
 import useStyles from './styles';
 
-const Comment = ({ comment /*, setCurrentId*/ }) => {
+const Comment = ({ comment }) => {
   const classes = useStyles();
   return (
     <React.Fragment>

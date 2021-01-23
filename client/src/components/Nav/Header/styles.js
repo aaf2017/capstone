@@ -42,10 +42,13 @@ export default makeStyles((theme) => ({
   toolbar: { 
     display: 'flex',
     justifyContent: 'flex-end',
-    width: '150px',
+    width: '200px',
   },
   tabContainer: {
     marginRight: 0,
+    //minWidth: 100
+    //display: "block",
+
   },
   boxTwoBrand: {
     display: "flex",
@@ -59,21 +62,13 @@ export default makeStyles((theme) => ({
     minWidth: 15,
     marginRight: 0,
     color: "#48e0e4",
-    //textShadow: "8px 4px 7px rgba(228,4,117,0.94)",
     fontWeight: 600,
     fontSize: 18,
     padding: 0,
     "&:hover": {
         backgroundColor: "transparent",
         color: "#e40475",
-        //color: "rgba(190,179,139,0.94)",
-        //textShadow: "8px 4px 7px rgba(228,4,117,0.94)",
     }
-  },
-  profile: { ///////////////
-    display: 'flex',
-    justifyContent: 'flex-end',
-    width: '400px',
   },
   subHeader: {
     color: "#BEB38B",
@@ -81,18 +76,43 @@ export default makeStyles((theme) => ({
     marginRight: "9em",
     marginLeft: "auto"
   },
-  cyan: {
-    color: theme.palette.getContrastText(cyan[500]),
-    backgroundColor: cyan[200],
-  },
+  
   userName: {
     display: 'flex',
+    flexGrow: 0,
     alignItems: 'center',
+      ...theme.typography.tab,
+    minWidth: 145,
+    marginRight: "2em",
+    marginLeft: "auto",
+    color: "#e40475",
+    fontFamily: "Quintessential, cursive",
+    fontWeight: 600,
+    fontSize: 18,
+    padding: 0,
+  },
+  logout: {
+    display: 'flex',
+    justifyContent: 'center',
+    width: '150px',
   },
   [theme.breakpoints.down('sm')]: {
     mainContainer: {
       flexDirection: "column-reverse",
     },
   },
- 
+ authLink: {
+  ...theme.typography.tab,
+  //minWidth: 15,
+  marginRight: "3em",
+  marginLeft: "auto",
+  color: "#48e0e4",
+  fontWeight: 600,
+  fontSize: 18,
+  padding: 0,
+  "&:hover": {
+      backgroundColor: "transparent",
+      color: "#e40475",
+  }
+ },
 }));

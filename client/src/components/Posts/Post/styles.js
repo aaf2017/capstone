@@ -9,8 +9,7 @@ export default makeStyles({
   },
   boxThree: {
     display: 'flex',
-    flexDirection: 'block',
-    //justifyContent: 'space-between',
+    flexDirection: 'row',
     borderRadius: '5px',
     height: 'auto',
     position: 'relative',
@@ -27,47 +26,29 @@ export default makeStyles({
     padding: '0 16px 8px 16px',
     display: 'flex',
     justifyContent: 'space-between',
-    //color: "#e40475",
     color: '#48e0e4',
-    padding: 0,
     '&:hover': {
       backgroundColor: 'transparent',
-      color: 'rgba(190,179,139,0.94)',
+      color: '#e40475',
     },
   },
-  deleteOutlineIcon: {
+  /*deleteOutlineIcon: {
     '&:hover': {
       backgroundColor: 'transparent',
-      color: 'rgba(190,179,139,0.94)',
+      color: '#e40475',
     },
   },
   questionAnswerIcon: {
     '&:hover': {
       backgroundColor: 'transparent',
-      color: 'rgba(190,179,139,0.94)',
+      color: '#e40475',
     },
-  },
-  edit: {
-    '&:hover': {
-      backgroundColor: 'transparent',
-      color: 'rgba(190,179,139,0.94)',
-    },
-  },
+  },*/
   overlay: {
     position: 'absolute',
     top: '20px',
     right: '20px',
     color: 'white',
-  },
-  buttons: {
-    //color: "#e40475",
-    color: '#48e0e4',
-    size: '5px',
-    padding: 0,
-    '&:hover': {
-      backgroundColor: 'transparent',
-      color: 'rgba(190,179,139,0.94)',
-    },
   },
   questionGrid: {
     marginRight: 0,
@@ -78,7 +59,7 @@ export default makeStyles({
     maxWidth: '120px',
   },
   name: {
-    //fontFamily: "Felipa, cursive",
+    fontFamily: "Felipa, cursive",
     fontWeight: '600',
   },
 });

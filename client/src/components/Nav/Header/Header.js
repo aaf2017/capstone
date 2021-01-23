@@ -1,25 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Drawer,
-  Divider,
   Container,
   AppBar,
   Button,
   Typography,
-  Avatar,
-  Grow,
   Grid,
   Toolbar,
   Box,
-  Tabs,
-  Tab,
-  Menu,
-  MenuItem,
-  useMediaQuery,
-  List,
-  ListItem,
-  ListItemText,
 } from '@material-ui/core';
 import logo from '../../../images/logo.svg';
 import useStyles from './styles';
@@ -47,7 +35,6 @@ const Header = () => {
           component={Link}
           to='/'
           disableRipple
-          //onClick={() => setValue(0)}
           className={classes.logoContainer}
         >
           <img
@@ -74,19 +61,24 @@ const Header = () => {
       <Toolbar className={classes.toolbar}>
         <Container className={classes.tabContainer}>
           {user ? (
-            <div>
-              <Typography className={classes.userName} variant='h6'>
-                {user.firstName}
+            <Grid className={classes.logout}>
+            
+            <Typography className={classes.userName}>
+                Welcome, {user.firstName}
               </Typography>
+            
+
+            <div className = {classes.authLink}>
               <Button
-                variant='contained'
-                className={classes.logout}
+                className={classes.authLink}
                 color='secondary'
                 onClick={() => onLogOut()}
               >
                 Logout
               </Button>
             </div>
+            </Grid>
+         
           ) : (
             <Button
               disableRipple
@@ -95,7 +87,7 @@ const Header = () => {
               color='#48e0e4'
               className={classes.tab}
             >
-              Sign In
+               Login
             </Button>
           )}
         </Container>

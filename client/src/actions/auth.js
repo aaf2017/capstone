@@ -1,6 +1,7 @@
 import { AUTH } from '../constants/actionTypes';
 import * as api from '../api/index.js';
 
+//LOGIN FORM
 export const signin = (formData, router) => async dispatch => {
   try {
     const { data } = await api.signIn(formData);
@@ -13,6 +14,7 @@ export const signin = (formData, router) => async dispatch => {
   }
 };
 
+//REGISTRATION FORM
 export const signup = (formData, router) => async dispatch => {
   try {
     const { data } = await api.signUp(formData);
@@ -25,6 +27,7 @@ export const signup = (formData, router) => async dispatch => {
   }
 };
 
+//AUTHORIZED USER
 export const loggedIn = () => async dispatch => {
   const { data } = await api.loggedIn();
   if (data) {

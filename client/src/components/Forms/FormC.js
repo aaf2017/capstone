@@ -27,9 +27,10 @@ const FormC = ({ post }) => {
   return (
     <Paper item xs={12}>
       <form noValidate onSubmit={handleSubmit}>
-        <Typography variant='h6'>Write Your Comment</Typography>
+        <Typography variant='h6' className={classes.formCheader}>Write Your Comment</Typography>
 
         <TextField
+          className={classes.questionArea}
           name='user_fname'
           variant='outlined'
           label='First Name'
@@ -55,11 +56,10 @@ const FormC = ({ post }) => {
         />
 
         <Button
-          className={classes.buttonSubmit}
+          className={classes.buttonSubmitComment}
           variant='contained'
           size='large'
-          type='submit'
-          fullWidth
+          type='submit'   
         >
           Submit
         </Button>

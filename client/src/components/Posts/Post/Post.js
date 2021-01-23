@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useState } from 'react-redux';
 import {
   Container,
   Grid,
@@ -15,7 +15,7 @@ import {
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+//import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { likePost, deletePost, updatePost } from '../../../actions/posts';
 import Comment from '../../Comments/Comment/Comment';
 import useStyles from './styles';
@@ -26,9 +26,6 @@ const Post = ({ post }) => {
   const classes = useStyles();
   console.log(post);
   const createdAt = new Date(post.createdAt);
-  //const likePost = (id) => {
-  //fetch()
-  //}
   const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = () => {
@@ -38,6 +35,8 @@ const Post = ({ post }) => {
     post.likes++;
     dispatch(updatePost(post._id, post));
   };
+
+  
 
   return (
     <React.Fragment>
@@ -76,33 +75,7 @@ const Post = ({ post }) => {
               </Typography>
             </Grid>
 
-            <Grid>
-              <Button
-                disableRipple
-                className={classes.actions}
-                style={{ color: '#e40475' }}
-                size='small'
-                onClick={() => {}}
-              >
-                <MoreHorizIcon fontSize='default' className={classes.edit} />
-              </Button>
-              <br />
-              <Button
-                disableRipple
-                size='small'
-                onClick={() => dispatch(deletePost(post._id))}
-                className={classes.actions}
-              >
-                <DeleteOutlineIcon
-                  disableRipple
-                  fontSize='small'
-                  variant='body2'
-                  className={classes.deleteOutlineIcon}
-                />
-              </Button>
-            </Grid>
-
-            <Grid>
+            <Grid className={classes.actionButtons}>
               <Button
                 disableRipple
                 size='small'
@@ -128,6 +101,19 @@ const Post = ({ post }) => {
                   fontSize='small'
                   variant='body2'
                   className={classes.questionAnswerIcon}
+                />
+              </Button>
+              <Button
+                disableRipple
+                size='small'
+                onClick={() => dispatch(deletePost(post._id))}
+                className={classes.actions}
+              >
+                <DeleteOutlineIcon
+                  disableRipple
+                  fontSize='small'
+                  variant='body2'
+                  className={classes.deleteOutlineIcon}
                 />
               </Button>
             </Grid>

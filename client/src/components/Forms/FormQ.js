@@ -36,7 +36,7 @@ const FormQ = () => {
   };
 
   const clear = () => {
-    setPostData({ user_fname: '', category: '', question: '', comments: [], likes: 0 });
+    setPostData({ user_fname: '', category: '', question: '', comments: [], /*likes: 0 */});
   };
 
   return (

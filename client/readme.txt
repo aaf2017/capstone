@@ -6,6 +6,7 @@ npm start
 
 npm react-redux 
 
-npm install jwt-decode react-google-login
+//npm install jwt-decode react-google-login
+npm cookie-parser express-session
 npm install react-router-dom
 

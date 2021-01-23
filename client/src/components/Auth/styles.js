@@ -63,20 +63,4 @@ export default makeStyles((theme) => ({
           fontSize: 15,
             }
       },
-  /*paper: {
-    padding: theme.spacing(2),
-    marginTop: "6.5em",
-    boxShadow: "6px 8px 14px 10px rgba(190,179,139,0.83)",
-    width: "300px",
-    display: "flex",
-    flexGrow: 1,
-    overflow: 'hidden',
-  },
-  form: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-  },
-  avatar: {
-  },*/
 }));
